@@ -114,21 +114,6 @@ simulador-matricula/
 
 ---
 
-📦 Como Executar <br>
-1-Clone este repositório
-```
-git clone https://github.com/rafaelcasadio/simulador-matricula.git
-
-```
-2-Importe no NetBeans/IntelliJ/Eclipse/VS Code como projeto Maven
-
-3-Compile e execute todos os testes JUnit:
-```
-mvn test
-
-```
----
-
 🙋‍♂️ Autor<br>
 Rafael Casadio Costa<br>
 GitHub: rafaelcasadio<br>
