@@ -128,7 +128,7 @@ mvn test
 ```
 ---
 
-🙋‍♂️ Autor
+🙋‍♂️ Autor<br>
 Rafael Casadio Costa<br>
 GitHub: rafaelcasadio<br>
 LinkedIn: https://www.linkedin.com/in/rafael-casadio/
