@@ -1,5 +1,6 @@
 # 🎓 Simulador de Matrícula 
 
+Projeto de Orientação a Objetos (UFJF 2025).
 Simulação de um sistema de matrícula, em Java, que reproduz regras reais de inscrição em turmas de uma universidade.  
 O projeto aplica orientação a objetos e testes automatizados com **JUnit**, permitindo criar disciplinas (obrigatórias, eletivas e optativas) com pré‑requisitos e co‑requisitos, turmas com horários e capacidade, e simular matrículas de alunos.
 
@@ -119,7 +120,7 @@ simulador-matricula/
 git clone https://github.com/rafaelcasadio/simulador-matricula.git
 
 ```
-2-Importe no IntelliJ/Eclipse/VS Code como projeto Maven
+2-Importe no NetBeans/IntelliJ/Eclipse/VS Code como projeto Maven
 
 3-Compile e execute todos os testes JUnit:
 ```
