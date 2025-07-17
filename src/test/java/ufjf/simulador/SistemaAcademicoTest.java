@@ -11,8 +11,6 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-
-
 public class SistemaAcademicoTest {
 
     @Test
@@ -29,7 +27,7 @@ public class SistemaAcademicoTest {
 
         SistemaAcademico sistema = new SistemaAcademico();
         sistema.simularMatricula(aluno);
-
+        
         // Espera-se que Algoritmos tenha sido adicionada ao histórico pois tem o prerequisito poo
         assertTrue(aluno.getHistorico().containsKey(algoritmos));
     }
@@ -98,6 +96,25 @@ public class SistemaAcademicoTest {
         
         //Espera-se que tenha algortimos no historico, pois ele ja conluiu pelo menos um dos requisitos
         assertTrue(aluno.getHistorico().containsKey(algoritmos));
+    }
+    
+    @Test
+    public void testRejeicaoPorFaltaDePreRequistoCreditosMinimos() {
+        Disciplina poo = new DisciplinaObrigatoria("INF001", "POO", 9);
+        Disciplina algoritmos = new DisciplinaObrigatoria("INF002", "Algoritmos", 4);
+        algoritmos.adicionarValidador(new ValidadorCreditosMinimos(10));
+
+        Aluno aluno = new Aluno("Gustavo", "202501002", 20);
+        aluno.adicionarDisciplinaConcluida(poo, 60);
+
+        Turma turmaAlg = new Turma("T02", algoritmos, 10, "segunda 10h–12h");
+        aluno.planejarTurma(turmaAlg);
+
+        SistemaAcademico sistema = new SistemaAcademico();
+        sistema.simularMatricula(aluno);
+        
+        
+        assertFalse(aluno.getHistorico().containsKey(algoritmos));
     }
     
     @Test

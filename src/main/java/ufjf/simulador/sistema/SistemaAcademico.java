@@ -29,7 +29,7 @@ public class SistemaAcademico {
                     if(disciplina == d && nota >=60){
                         throw new DisciplinaJaCursadaException("Disciplina ja foi cursada");
                     }
-            }
+                }
                 
                 // PRÉ-REQUISITOS
                 for (ValidadorPreRequisito validador : disciplina.getValidadores()) {
@@ -42,15 +42,15 @@ public class SistemaAcademico {
                 boolean conflito = false;
                 for (Turma t : aceitas) {
                     if (turma.horarioConflitaCom(t)) {
-                        int prNova = disciplina.getPrioridade();
-                        int prAtual = t.getDisciplina().getPrioridade();
+                        int Nova = disciplina.getPrioridade();
+                        int Atual = t.getDisciplina().getPrioridade();
 
-                        if (prNova > prAtual) {
+                        if (Nova > Atual) {
                             relatorio.add("[REMOVIDA] " + t.getDisciplina().getNome() + " por conflito com " + disciplina.getNome());
                             aceitas.remove(t);
                             cargaAtual -= t.getDisciplina().getCargaHorariaSemanal();
                             break;
-                        } else if (prNova < prAtual) {
+                        } else if (Nova < Atual) {
                             conflito = true;
                             break;
                         } else {
@@ -76,7 +76,6 @@ public class SistemaAcademico {
                 }
 
                 //matricular (provisoriamente)
-                turma.matricularAluno(aluno.getMatricula());
                 aceitas.add(turma);
                 cargaAtual += disciplina.getCargaHorariaSemanal();
                 relatorio.add("[ACEITA] " + disciplina.getNome());
@@ -93,12 +92,17 @@ public class SistemaAcademico {
                 boolean presente = aceitas.stream()
                     .anyMatch(t -> t.getDisciplina().equals(co));
                 if (!presente) {
+                    
                     aceitas.remove(turma);
                     relatorio.remove("[ACEITA] " + d.getNome()); 
                     relatorio.add("[REJEITADA] " + d.getNome() + " - Faltando co-requisito: " + co.getNome());
                     break;
                 }
             }
+        }
+        
+        for (Turma t : aceitas) {
+            t.matricularAluno(aluno.getMatricula());
         }
 
         // Atualizar histórico do aluno com disciplinas aceitas
