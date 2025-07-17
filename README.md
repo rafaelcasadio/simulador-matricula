@@ -6,7 +6,7 @@ O projeto aplica orientação a objetos e testes automatizados com **JUnit**, pe
 
 ---
 
-## 🚀 Funcionalidades
+# 🚀 Funcionalidades
 
 1. **Modelagem de Disciplinas**  
    - **Obrigatórias**, **Eletivas** e **Optativas**  
@@ -22,51 +22,42 @@ O projeto aplica orientação a objetos e testes automatizados com **JUnit**, pe
      1. Disciplinas Obrigatórias  
      2. Disciplinas Eletivas  
      3. Disciplinas Optativas
-4. **Testes Automatizados (JUnit 5)**  
+4. **Testes Automatizados (JUnit)**  
    - Cobertura de cenários principais e casos‑limite:
      - Matrícula bem‑sucedida
      - Rejeição por conflito de horário
      - Rejeição por falta de pré‑requisito ou co‑requisito
      - Prioridade de inscrição em disciplinas obrigatórias
 
+
+
 ---
+# 💻 Tecnologias e Execução
 
-## 📂 Estrutura do Projeto
+- Linguagem: **Java 21**
+- Build: **Maven**
+- Execução no terminal 
 
+---
+## ✅ Requisitos
+
+- JDK 21 instalado
+- Maven instalado
+
+---
+#  ▶️ Como executar
+
+```bash
+# Clonar o projeto
+git clone https://github.com/rafaelcasadio/simulador-matricula.git
+cd simulador-matricula
+
+# Executar os testes
+mvn test
 ```
-simulador-matricula/
-├── src/
-│ ├── main/
-│ │ └── java/
-│ │ ├── model/
-│ │ │ ├── Disciplina.java
-│ │ │ ├── DisciplinaObrigatoria.java
-│ │ │ ├── DisciplinaEletiva.java
-│ │ │ ├── DisciplinaOptativa.java
-│ │ │ ├── Aluno.java
-│ │ │ └── Turma.java
-│ │ └── service/
-│ │ └── ControladorDeMatricula.java
-│ └── test/
-│ └── java/
-│ └── test/
-│ ├── MatriculaSucessoTest.java
-│ ├── ConflitoHorarioTest.java
-│ ├── PreRequisitoTest.java
-│ └── PrioridadeObrigatoriaTest.java
-└── pom.xml
-```
-
 ---
 
-## 🛠️ Tecnologias e Ferramentas
-
-- **Java** (Orientação a Objetos)  
-- **JUnit** (Teste unitário)  
-- **Maven** (Gerenciamento de dependências e build)
----
-
-## 🧪 Exemplos de Testes
+#  🧪 Exemplos de Testes
 
 -Matrícula aceita pois Joao já cursou o prerequisito poo
 ```java
@@ -114,7 +105,7 @@ simulador-matricula/
 
 ---
 
-🙋‍♂️ Autor<br>
+# 🙋‍♂️ Autor<br>
 Rafael Casadio Costa<br>
 GitHub: rafaelcasadio<br>
 LinkedIn: https://www.linkedin.com/in/rafael-casadio/
